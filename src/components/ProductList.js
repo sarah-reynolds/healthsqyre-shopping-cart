@@ -30,12 +30,11 @@ const ProductList = () => {
 		<Container>
 			<ProductPaper elevation={3} >
 				{isLoading && <Typography>Loading...</Typography>} 
-				<Typography variant="h4">List of Available Products</Typography>
+				<Typography variant="h4">List of Products</Typography>
 				<Divider/>
 				{
 					products.map((product, index) => <ProductItem product={product} key={index}/>)
 				}
-				<Divider/>
 				<Button variant="contained" color="primary" href="/cart">View Cart</Button>
 			</ProductPaper>
 		</Container>

@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
+import Snackbar from '@material-ui/core/Snackbar';
 
 import { styled } from '@material-ui/core/styles';
 
@@ -19,6 +20,7 @@ const AddToCartButton = styled(Button)({
 const ProductItem = props => {
 	const { product } = props;
 	const [quantity, setQuantity] = useState(1);
+	const [snackbarOpen, setSnackbarOpen] = useState(false);
 
 	const handleInputChange = event => setQuantity(event.target.value)
 
@@ -29,6 +31,11 @@ const ProductItem = props => {
 		let qty = cart[id] + parseInt(quantity);
 		cart[id] = qty
 		localStorage.setItem('cart', JSON.stringify(cart));
+		setSnackbarOpen(true)
+	}
+
+	const handleSnackbarClose = () => {
+		setSnackbarOpen(false)
 	}
 		
 		return (
@@ -42,6 +49,12 @@ const ProductItem = props => {
 				{ product.in_stock ?
 					<>
 						<AddToCartButton variant="contained" color="secondary" onClick={addToCart}>Add to cart</AddToCartButton>
+						<Snackbar
+							open={snackbarOpen}
+							autoHideDuration={4000}
+							message="Item added to cart"
+							onClose={handleSnackbarClose}
+						/>
 						<Input type="number" value={quantity} name="quantity" onChange={handleInputChange} />
 					</> : 
 					<Typography>Product is out of stock</Typography>

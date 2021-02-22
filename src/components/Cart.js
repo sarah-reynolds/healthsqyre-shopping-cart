@@ -8,6 +8,10 @@ import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import { styled } from '@material-ui/core/styles';
 
+const ClearCartButton = styled(Button)({
+	margin: '10px 0'
+})
+
 const Cart = () => {
 	const [cartProducts, setCartProducts] = useState([])
 	const [total, setTotal] = useState(0)
@@ -54,7 +58,7 @@ const Cart = () => {
 			{ cartProducts.length && <Typography>Total Amount: ${total}</Typography>}
 
 			{ !cartProducts.length && <Typography>Your cart is empty.</Typography>}
-			<Button variant="contained" onClick={clearCart}>Clear cart</Button>
+			<ClearCartButton variant="contained" onClick={clearCart}>Clear cart</ClearCartButton>
 
 		</Container>
 	);
