@@ -30,7 +30,7 @@ const ProductList = () => {
 		<Container>
 			<ProductPaper elevation={3} >
 				{isLoading && <Typography>Loading...</Typography>} 
-				<Typography variant="h4">List of Products</Typography>
+				<Typography className="header" variant="h4">List of Products</Typography>
 				<Divider/>
 				{
 					products.map((product, index) => <ProductItem product={product} key={index}/>)

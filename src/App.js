@@ -9,7 +9,8 @@ import { styled } from '@material-ui/core/styles';
 const StyledContainer = styled(Container)({
   backgroundColor: '#f7f8fc',
   paddingBottom: '20px',
-  height: '100%'
+  height: '100%',
+  minWidth: '100vw'
 });
 
 const App = () => {  
@@ -20,7 +21,6 @@ const App = () => {
       <Route exact path="/" component={Products} />
       <Route exact path="/cart" component={Cart} />
       </StyledContainer>
-      
     </Router>
   );
 }

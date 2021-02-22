@@ -20,7 +20,7 @@ const CartButton = styled(Button)({
 const CartItem = props => {
 	const { product } = props;
 	return (
-		<CartCard>
+		<CartCard className={`cartItem-${product.id}`}>
 			<CartTypography variant="h5">{product.name}</CartTypography>
 			<CartTypography variant="h5">Price: ${product.price}</CartTypography>
 			<CartTypography>Quantity: {product.qty}</CartTypography>

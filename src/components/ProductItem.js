@@ -48,14 +48,14 @@ const ProductItem = props => {
 					
 				{ product.in_stock ?
 					<>
-						<AddToCartButton variant="contained" color="secondary" onClick={addToCart}>Add to cart</AddToCartButton>
+						<AddToCartButton className={`productButton-${product.id}`} variant="contained" color="secondary" onClick={addToCart}>Add to cart</AddToCartButton>
 						<Snackbar
 							open={snackbarOpen}
 							autoHideDuration={4000}
 							message="Item added to cart"
 							onClose={handleSnackbarClose}
 						/>
-						<Input type="number" value={quantity} name="quantity" onChange={handleInputChange} />
+						<Input className={`productInput-${product.id}`} type="number" value={quantity} name="quantity" onChange={handleInputChange} />
 					</> : 
 					<Typography>Product is out of stock</Typography>
 				}
