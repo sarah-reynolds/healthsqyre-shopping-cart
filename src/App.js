@@ -9,14 +9,14 @@ import { styled } from '@material-ui/core/styles';
 const StyledContainer = styled(Container)({
   backgroundColor: '#f7f8fc',
   paddingBottom: '20px',
-  height: '100vh'
+  height: '100%'
 });
 
 const App = () => {  
   return (
     <Router>
       <StyledContainer>
-        <Header />
+      <Header />
       <Route exact path="/" component={Products} />
       <Route exact path="/cart" component={Cart} />
       </StyledContainer>

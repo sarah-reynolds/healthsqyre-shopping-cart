@@ -4,9 +4,17 @@ import CartItem from './CartItem';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
+import Paper from '@material-ui/core/Paper';
 import { styled } from '@material-ui/core/styles';
+
+const StyledContainer = styled(Container)({
+  height: '100vh'
+});
+
+const StyledPaper = styled(Paper)({
+	padding: '10px'
+});
 
 const ClearCartButton = styled(Button)({
 	margin: '10px 0'
@@ -48,19 +56,22 @@ const Cart = () => {
 		setCartProducts([])
 	}
 	return (
-		<Container>
+		<StyledContainer>
+			<StyledPaper>
 			<Typography variant="h4">Your Shopping Cart</Typography>
 			<Divider/>
-			{
-				cartProducts.map((product, index) => <CartItem product={product} remove={removeFromCart} key={index}/>)
-			}
+				{
+					cartProducts.map((product, index) => <CartItem product={product} remove={removeFromCart} key={index}/>)
+				}
 			<Divider/>
-			{ cartProducts.length && <Typography>Total Amount: ${total}</Typography>}
+			{ cartProducts.length ? <Typography>Total Amount: ${total}</Typography> : ''}
 
-			{ !cartProducts.length && <Typography>Your cart is empty.</Typography>}
+			{ !cartProducts.length ? <Typography>Your cart is empty.</Typography> : ''}
 			<ClearCartButton variant="contained" onClick={clearCart}>Clear cart</ClearCartButton>
 
-		</Container>
+			</StyledPaper>
+			
+		</StyledContainer>
 	);
 }
 
