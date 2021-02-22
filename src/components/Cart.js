@@ -67,7 +67,7 @@ const Cart = () => {
 			{ cartProducts.length ? <Typography className="total">Total Amount: ${total}</Typography> : ''}
 
 			{ !cartProducts.length ? <Typography>Your cart is empty.</Typography> : ''}
-			<ClearCartButton variant="contained" onClick={clearCart}>Clear cart</ClearCartButton>
+			<ClearCartButton className="clearCart" variant="contained" onClick={clearCart}>Clear cart</ClearCartButton>
 
 			</StyledPaper>
 			

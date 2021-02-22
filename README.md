@@ -8,11 +8,18 @@ A simple shopping cart application that includes, on the front-end, a product li
 - Run `npm run api` to start the backend api
 - In another terminal, run `npm start` to start the React front end client
 
+## How to run Cypress integration tests
+- Have full stack app running
+- Run `npm run test:cypress`; wait briefly as Cypress test runner spins up
+- Click on shopping_cart.spec.js
+- Tests will automatically run, and you can click around the test runner
+
 ## Technologies used
 
 - React, via bootstrapped `create-react-app`
 - Google's Material-UI for front end UI components and styling
 - Node and Express for the api
+- Cypress.io for integration tests
 
 ## Requirements completed
 - [x] **REQUIREMENT 1:** On their first interaction, an end user should see the list of items from the test product list. 

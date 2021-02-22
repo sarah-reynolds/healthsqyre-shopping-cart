@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "nodemon api/server.js"
+    "api": "nodemon api/server.js",
+    "test:cypress": "node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": [
